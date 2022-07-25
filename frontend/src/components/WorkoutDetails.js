@@ -1,9 +1,13 @@
-import { useWorkoutsContext } from '../hooks/useWorkoutContext'
-import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
+
+// date fns
+import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+
 const WorkoutDetails = ({ workout }) => {
   const { dispatch } = useWorkoutsContext()
   const { user } = useAuthContext()
+
   const handleClick = async () => {
     if (!user) {
       return
@@ -30,7 +34,7 @@ const WorkoutDetails = ({ workout }) => {
         {workout.load}
       </p>
       <p>
-        <strong>Number of reps: </strong>
+        <strong>Reps: </strong>
         {workout.reps}
       </p>
       <p>
